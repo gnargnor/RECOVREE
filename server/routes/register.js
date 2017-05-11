@@ -47,9 +47,9 @@ var RegistrationSchema = mongoose.Schema({
   drugChoice: {type: String},
   sobrietyDate: {type: Date},
   programPayment: {type: String},
-  medication: {type: Schema.ObjectId, ref: 'User'},
+  // medication: {type: Schema.ObjectId, ref: 'User'},
   termsAgreement: {type: Boolean},
-  memberID: {type: Schema.ObjectId, ref: 'User'}
+  // memberID: {type: Schema.ObjectId, ref: 'User'}
 });
 
 var Recovree = mongoose.model('recovree', RecovreeSchema, 'recovree');
