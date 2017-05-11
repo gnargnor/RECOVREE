@@ -50,3 +50,8 @@ height: 60px;
 .navMenu {
   display:
 }
+
+.login-container{
+  padding: 20px;
+  text-align: center;
+}
