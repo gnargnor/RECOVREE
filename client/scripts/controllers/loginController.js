@@ -14,10 +14,10 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
           if(response.data.username) {
             console.log('success: ', response.data);
             // location works with SPA (ng-route)
-            $location.path('/user');
+            $location.path('/home');
           } else {
             console.log('failure: ', response);
-            $scope.message = "Wrong!!";
+            $scope.message = "Username or password is incorrect.";
           }
         });
       }
@@ -30,7 +30,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         console.log('sending to server...', $scope.user);
         $http.post('/register', $scope.user).then(function(response) {
           console.log('success');
-          $location.path('/home');
+          $location.path('/login');
         },
         function(response) {
           console.log('error');

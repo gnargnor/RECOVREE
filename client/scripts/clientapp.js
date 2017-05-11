@@ -52,12 +52,12 @@ myApp.config(['$routeProvider', '$locationProvider',
 //day detail
     .when('/day-detail', {
       templateUrl: '/views/templates/dayDetail.html',
-      controller: 'DayDetialController',
-      resolve: {
-        getuser : ['UserService', function(UserService){
-          return UserService.getuser();
-        }]
-      }
+      controller: 'DayDetailController',
+      // resolve: {
+      //   getuser : ['UserService', function(UserService){
+      //     return UserService.getuser();
+      //   }]
+      // }
     })
 
 //graph summary
@@ -83,24 +83,25 @@ myApp.config(['$routeProvider', '$locationProvider',
     })
 
 //extra from base project
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController',
-      resolve: {
-        getuser : ['UserService', function(UserService){
-          return UserService.getuser();
-        }]
-      }
-    })
-    .when('/user', {
-      templateUrl: '/views/templates/user.html',
-      controller: 'UserController',
-      resolve: {
-        getuser : ['UserService', function(UserService){
-          return UserService.getuser();
-        }]
-      }
-    })
+    // .when('/info', {
+    //   templateUrl: '/views/templates/info.html',
+    //   controller: 'InfoController',
+    //   resolve: {
+    //     getuser : ['UserService', function(UserService){
+    //       return UserService.getuser();
+    //     }]
+    //   }
+    // })
+    // .when('/user', {
+    //   templateUrl: '/views/templates/user.html',
+    //   controller: 'UserController',
+    //   resolve: {
+    //     getuser : ['UserService', function(UserService){
+    //       return UserService.getuser();
+    //     }]
+    //   }
+    // })
+    
     .otherwise({
       redirectTo: 'login'
     });
