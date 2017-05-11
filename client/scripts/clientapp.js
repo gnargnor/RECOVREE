@@ -50,7 +50,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 1
       .when('/check-in-form/check-in-1', {
         templateUrl: '/views/templates/checkInForm/checkIn1.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -61,7 +61,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 2
       .when('/check-in-form/check-in-2', {
         templateUrl: '/views/templates/checkInForm/checkIn2.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -72,7 +72,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 3
       .when('/check-in-form/check-in-3', {
         templateUrl: '/views/templates/checkInForm/checkIn3.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -83,7 +83,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 4
       .when('/check-in-form/check-in-4', {
         templateUrl: '/views/templates/checkInForm/checkIn4.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -94,7 +94,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 5
       .when('/check-in-form/check-in-5', {
         templateUrl: '/views/templates/checkInForm/checkIn5.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -105,7 +105,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 6
       .when('/check-in-form/check-in-6', {
         templateUrl: '/views/templates/checkInForm/checkIn6.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -116,7 +116,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 7
       .when('/check-in-form/check-in-7', {
         templateUrl: '/views/templates/checkInForm/checkIn7.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -127,7 +127,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 8
       .when('/check-in-form/check-in-8', {
         templateUrl: '/views/templates/checkInForm/checkIn8.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -138,7 +138,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 9
       .when('/check-in-form/check-in-9', {
         templateUrl: '/views/templates/checkInForm/checkIn9.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -149,7 +149,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 10
       .when('/check-in-form/check-in-10', {
         templateUrl: '/views/templates/checkInForm/checkIn10.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -160,7 +160,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 11
       .when('/check-in-form/check-in-11', {
         templateUrl: '/views/templates/checkInForm/checkIn11.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -171,7 +171,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       //check in 12
       .when('/check-in-form/check-in-12', {
         templateUrl: '/views/templates/checkInForm/checkIn12.html',
-        controller: 'checkInFormController',
+        controller: 'CheckInFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
