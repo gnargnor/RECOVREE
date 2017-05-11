@@ -4,7 +4,7 @@
 }
 
 .instructions {
-    background-color: #333333;
+    background-color: #000000;
     color: #DDDDDD;
 }
 
@@ -41,12 +41,17 @@
 }
 
 #navFooter {
-position: absolute;
-bottom: 0;
-width: 100%;
-height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
 }
 
-.navMenu {
-  display:
+#navFooter ul {
+  list-style: none;
+}
+
+#navFooter li {
+  display: inline-flex;
 }

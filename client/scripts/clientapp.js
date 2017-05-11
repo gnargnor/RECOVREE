@@ -233,7 +233,7 @@ myApp.config(['$routeProvider', '$locationProvider',
     //     }]
     //   }
     // })
-    
+
     .otherwise({
       redirectTo: 'login'
     });
