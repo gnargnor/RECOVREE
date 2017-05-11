@@ -13,20 +13,22 @@ module.exports = function(grunt){
         expand: true,
         cwd: 'client/views',
         src: ['index.html',
-              '**/*.html'],
+              '**/*.html',
+              '**/**/*.html'],
         dest: 'server/public/views/'
       },
       css: {
         expand: true,
         cwd: 'client/styles',
-        src: ['style.css'],
+        src: ['style.css','images/*.*'],
         dest: 'server/public/styles/'
       },
       bootstrap: {
         expand: true,
         cwd: 'node_modules/bootstrap/dist/',
-        src: ['css/bootstrap.css',
-              'js/bootstrap.js'],
+        src: ['css/*.*',
+              'js/*.*',
+              'fonts/*.*'],
         dest: 'server/public/vendors/bootstrap/'
       },
       angular: {
