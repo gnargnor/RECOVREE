@@ -28,7 +28,7 @@ var CheckInSchema = mongoose.Schema({
   peerSupport: {type: Boolean},
   counselor: {type: Boolean},
   checkInDate: {type: Date, default: Date.now},
-  memberID: {type: Schema.ObjectId, ref: 'Registration'} //references Registration Schema
+  // memberID: {type: Schema.ObjectId, ref: 'Registration'} //references Registration Schema
 });
 
 var Recovree = mongoose.model('recovree', RecovreeSchema, 'recovree');

@@ -39,6 +39,7 @@ router.post('/', function(req, res, next) {
 //SAVE ALL OTHER REGISTRATION DATA FROM REGISTER VIEW
 var RecovreeSchema = mongoose.Schema({});
 
+// RESOLVE WITH LOGAN
 var RegistrationSchema = mongoose.Schema({
   state: {type: String},
   county: {type: String},
@@ -47,9 +48,9 @@ var RegistrationSchema = mongoose.Schema({
   drugChoice: {type: String},
   sobrietyDate: {type: Date},
   programPayment: {type: String},
-  medication: {type: Schema.ObjectId, ref: 'User'},
+  // medication: {type: Schema.ObjectId, ref: 'User'},
   termsAgreement: {type: Boolean},
-  memberID: {type: Schema.ObjectId, ref: 'User'}
+  // memberID: {type: Schema.ObjectId, ref: 'User'}
 });
 
 var Recovree = mongoose.model('recovree', RecovreeSchema, 'recovree');
