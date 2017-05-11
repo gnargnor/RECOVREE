@@ -2,7 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
-var variables = require('../variables/variables.js');
+var gv = require('../variables/variables.js');
+
+console.log('testing global variables: ', gv.test);
+gv.testFunc('Hello World');
 
 // Mongoose Schema
 var UserSchema = new Schema({
