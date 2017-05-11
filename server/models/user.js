@@ -11,15 +11,17 @@ gv.testFunc('Hello World');
 var UserSchema = new Schema({
     username: {type: String, required: true, index: {unique: true}},
     password: {type: String, required: true},
-    //userType: {type: Number}, //1: admin, 2: member - Will be defined in the log-in screen
-    // memberID : {type: Number, index: {unique:true}},
-    //medication : {type: Boolean}
+    userType: {type: Number}, //1: admin, 2: member - Will be defined in the log-in screen - client side
+    memberID : {type: Number, index: {unique:true}},
+    medication : {type: Boolean}
 });
 
 //generate Random ID number for each new member
-var RandomID = Math.round(Math.random() * (9999 - 1000) + 1000);
-console.log(RandomID);
+var RandomNumID = Math.round(Math.random() * (9999 - 1000) + 1000);
+console.log(RandomNumID);
 //verify that memeber ID is unique number before assigning it
+//
+
 
 // Called before adding a new user to the DB. Encrypts password.
 UserSchema.pre('save', function(next) {
