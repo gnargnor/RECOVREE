@@ -55,3 +55,8 @@
 #navFooter li {
   display: inline-flex;
 }
+
+.login-container{
+  padding: 20px;
+  text-align: center;
+}
