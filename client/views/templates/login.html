@@ -1,0 +1,31 @@
+<div class="container">
+  <div class = 'login-container row'>
+    <div class = 'col-md-offset-4 col-md-4 col-md-offset-4'>
+      <div class = 'panel panel-default'>
+        <div class = 'panel-body'>
+
+          <h1 class="lead">Login</h1>
+            <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
+            <form ng-submit="login()">
+              <div>
+                  <input type="text" placeholder = 'username' ng-model="user.username" />
+              </div>
+              <br>
+              <div>
+                  <input type="password" placeholder = 'password' ng-model="user.password" />
+              </div>
+              <br>
+              <div>
+                  <input class="btn btn-default" type="submit" name="submit" value="Log In" />
+                  <br>
+                  <a href="#register">Register</a>
+              </div>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class='navMenu' ng-include="'/views/partials/blankNav.html'"></footer>

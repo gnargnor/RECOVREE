@@ -39,6 +39,7 @@ router.post('/', function(req, res, next) {
 //SAVE ALL OTHER REGISTRATION DATA FROM REGISTER VIEW
 var RecovreeSchema = mongoose.Schema({});
 
+// RESOLVE WITH LOGAN
 var RegistrationSchema = mongoose.Schema({
   state: {type: String},
   county: {type: String},
