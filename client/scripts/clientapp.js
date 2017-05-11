@@ -27,7 +27,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 //home
     .when('/home', {
       templateUrl: '/views/templates/home.html',
-      controller: 'LoginController',
+      controller: 'HomeController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -38,7 +38,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 //incomplete form
     .when('/incomplete-form', {
       templateUrl: '/views/templates/incompleteForm.html',
-      controller: 'InfoController',
+      controller: 'DayDetailController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -52,7 +52,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 //day detail
     .when('/day-detail', {
       templateUrl: '/views/templates/dayDetail.html',
-      controller: 'InfoController',
+      controller: 'DayDetialController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -63,7 +63,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 //graph summary
     .when('/graph-summary', {
       templateUrl: '/views/templates/graphSummary.html',
-      controller: 'InfoController',
+      controller: 'GraphSummaryController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -74,7 +74,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 //admin export
     .when('/admin-export', {
       templateUrl: '/views/templates/adminExport.html',
-      controller: 'InfoController',
+      controller: 'AdminExportController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -102,6 +102,6 @@ myApp.config(['$routeProvider', '$locationProvider',
       }
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'login'
     });
 }]);
