@@ -38,4 +38,8 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         });
       }
     }
+
+  // REGISTRATION FORM
+
+  
 }]);

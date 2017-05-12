@@ -1,57 +1,73 @@
 <div class="container">
   <h1 class="lead">Register User</h1>
   <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
-  <!-- Captures Info into MemberSchema -->
+
+  <md-content>
   <form ng-submit="registerUser()">
-    <div>
+
+  <!-- Captures Info into MemberSchema -->
+    <md-input-container>
         <label for="username">Phone Number:</label>
         <input type="text" ng-model="user.username" />
-    </div>
-    <div>
+    </md-input-container>
+
+    <md-input-container>
         <label for="password">Password:</label>
         <input type="password" ng-model="user.password" />
-    </div>
+    </md-input-container>
+
 
   <!-- Captures Info into RegistrationSchema -->
-    <div>
-        <label for="username">State:</label>
+    <md-input-container>
+        <label for="state">State:</label>
         <input type="text" ng-model="user.state" />
-    </div>
-    <div>
-        <label for="username">County:</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="county">County:</label>
         <input type="text" ng-model="user.county" />
-    </div>
-    <div>
-        <label for="username">Gender:</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="gender">Gender:</label>
         <input type="text" ng-model="user.gender" />
-    </div>
-    <div>
-        <label for="username">Birth Year:</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="birthYear">Birth Year:</label>
         <input type="text" ng-model="user.birthYear" />
-    </div>
-    <div>
-        <label for="username">Drugs of Choice:</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="drugChoice">Drugs of Choice:</label>
         <input type="text" ng-model="user.drugChoice" />
-    </div>
-    <div>
-        <label for="username">Sobriety Date:</label>
-        <input type="text" ng-model="user.sobrietyDate" />
-    </div>
-    <div>
-        <label for="username">Form of Program Payment:</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="sobrietyDate">Sobriety Date:</label>
+        <md-datepicker ng-model="user.sobrietyDate"></md-datepicker>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="programPayment">Form of Program Payment:</label>
         <input type="text" ng-model="user.programPayment" />
-    </div>
-    <div>
-        <label for="username">Are you currently taking prescription medication?</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="medication">Are you currently taking prescription medication?</label>
         <input type="text" ng-model="user.medication" />
-    </div>
-    <div>
-        <label for="username">I agree to the Terms of Use</label>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="termsAgreement">I agree to the Terms of Use</label>
         <input type="text" ng-model="user.termsAgreement" />
-    </div>
+    </md-input-container>
+
     <input class="btn btn-default" type="submit" name="submit" value="Register" />
     <a href="#login">Cancel</a>
+
   </form>
+  </md-content>
 
 </div>
 
