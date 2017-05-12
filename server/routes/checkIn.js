@@ -34,15 +34,49 @@ var CheckInSchema = mongoose.Schema({
 var Recovree = mongoose.model('recovree', RecovreeSchema, 'recovree');
 var CheckIn = mongoose.model('checkIn', CheckInSchema, 'recovree');
 
+router.get('/', function (req, res) {
+  Recovree.find({}, function(err, recovree){
+    if(err){
+      console.log("Mongo Error: ", err);
+      res.send(500);
+    }
+    res.send(listings);
+  });
+});
 
+router.post("/", function(req,res){
+  var reflection = req.body;
+  var newForm = new CheckIn({
+    feelings : reflection.feelings,
+    drugAlcoholIntake: reflection.drugAlcoholIntake,
+    medication: reflection.medication,
+    sleep: reflection.sleep,
+    dream: reflection.dream,
+    exercise: reflection.exercise,
+    food: reflection.food,
+    spnsrMntrConnect: reflection.spnsrMntrConnect,
+    groupMeet: reflection.groupMeet,
+    commntyService: reflection.commntyService,
+    stressors: reflection.stressors,
+    selfishDishonest: reflection.selfishDishonest,
+    howSelfshDishnt: reflection.howSelfshDishnt,
+    tomorrowGoal: reflection.tomorrowGoal,
+    dailyGoal: reflection.dailyGoal,
+    gratitude: reflection.gratitude,
+    peerSupport: reflection.peerSupport,
+    counselor: reflection.counselor,
+    checkInDate: reflection.checkInDate,
+    memberID: registration.memberID
+  });
 
-
-
-
-
-
-
-
+  newForm.save(newForm, function(err, savedCheckIn){
+    if(err){
+      console.log("Error: ", err);
+      res.sendStatus(500);
+    }
+    res.send(savedHouse);
+  });
+});
 
 
 
