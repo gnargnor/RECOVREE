@@ -1,18 +1,72 @@
 <div class="container">
   <h1 class="lead">Register User</h1>
   <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
+
+  <md-content>
   <form ng-submit="registerUser()">
-    <div>
-        <label for="username">Username:</label>
+
+  <!-- Captures Info into MemberSchema -->
+    <md-input-container>
+        <label for="username">Phone Number:</label>
         <input type="text" ng-model="user.username" />
-    </div>
-    <div>
+    </md-input-container>
+
+    <md-input-container>
         <label for="password">Password:</label>
         <input type="password" ng-model="user.password" />
-    </div>
+    </md-input-container>
+
+
+  <!-- Captures Info into RegistrationSchema -->
+    <md-input-container>
+        <label for="state">State:</label>
+        <input type="text" ng-model="user.state" />
+    </md-input-container>
+
+    <md-input-container>
+        <label for="county">County:</label>
+        <input type="text" ng-model="user.county" />
+    </md-input-container>
+
+    <md-input-container>
+        <label for="gender">Gender:</label>
+        <input type="text" ng-model="user.gender" />
+    </md-input-container>
+
+    <md-input-container>
+        <label for="birthYear">Birth Year:</label>
+        <input type="text" ng-model="user.birthYear" />
+    </md-input-container>
+
+    <md-input-container>
+        <label for="drugChoice">Drugs of Choice:</label>
+        <input type="text" ng-model="user.drugChoice" />
+    </md-input-container>
+
+    <md-input-container>
+        <label for="sobrietyDate">Sobriety Date:</label>
+        <md-datepicker md-hide-icons="calendar" md-open-on-focus ng-model="user.sobrietyDate"></md-datepicker>
+    </md-input-container>
+
+    <md-input-container>
+        <label for="programPayment">Form of Program Payment:</label>
+        <input type="text" ng-model="user.programPayment" />
+    </md-input-container>
+
+    <md-input-container>
+        <label for="medication">Are you currently taking prescription medication?</label>
+        <input type="text" ng-model="user.medication" />
+    </md-input-container>
+
+    <md-input-container>
+        <md-checkbox ng-model="user.termsAgreement" required>I agree to the <a ng-href='#/termsOfUse'>Terms of Use</a></md-checkbox>
+    </md-input-container>
+
     <input class="btn btn-default" type="submit" name="submit" value="Register" />
     <a href="#login">Cancel</a>
+
   </form>
+  </md-content>
 
 </div>
 
