@@ -46,6 +46,7 @@ router.get('/', function (req, res) {
 
 router.post("/", function(req,res){
   var reflection = req.body;
+  var user = req.user;
   var newForm = new CheckIn({
     feelings : reflection.feelings,
     drugAlcoholIntake: reflection.drugAlcoholIntake,
@@ -66,7 +67,7 @@ router.post("/", function(req,res){
     peerSupport: reflection.peerSupport,
     counselor: reflection.counselor,
     checkInDate: reflection.checkInDate,
-    memberID: registration.memberID
+    memberID: user.memberID
   });
 
   newForm.save(newForm, function(err, savedCheckIn){

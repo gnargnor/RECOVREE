@@ -15,12 +15,6 @@ var UserSchema = new Schema({
     memberID : {type: Number, index: {unique:true}},
 });
 
-//generate Random ID number for each new member
-var RandomNumID = Math.round(Math.random() * (9999 - 1000) + 1000);
-console.log(RandomNumID);
-//verify that memeber ID is unique number before assigning it
-//
-
 
 // Called before adding a new user to the DB. Encrypts password.
 UserSchema.pre('save', function(next) {

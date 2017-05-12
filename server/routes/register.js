@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var Users = require('../models/user');
 var path = require('path');
+var gv = require('../variables/variables');
 
 var mongoose = require("mongoose");
 
@@ -12,16 +13,33 @@ router.get('/', function(req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
 });
 
+var randomIdGenerator = function(){
+  var newId = Math.round(Math.random() * (9999 - 1000) + 1000);
+  Users.count({'memberID' : 7167}, function(err, count){
+    if (err) {
+      console.log(err);
+    }
+    if (count >= 1){
+      randomIdGenerator();
+    } else {
+      console.log('no duplicate found');
+    }
+  });
+return newId;
+};
+
+
 // Handles POST request with new user data
 router.post('/', function(req, res, next) {
+  var newId = randomIdGenerator();
+  console.log('newId in post: ', newId);
   var newUser = req.body;
   var userToSave = {
     username: newUser.username,
     password: newUser.password,
-    memberID: newUser.memberID,
-    userType: newUser.userType
+    memberID: newId,
+    // userType: newUser.userType
   };
-
   Users.create(userToSave, function(err, post) {
     if (err) {
       // next() here would continue on and route to routes/index.js
