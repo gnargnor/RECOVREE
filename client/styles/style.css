@@ -4,7 +4,7 @@
 }
 
 .instructions {
-    background-color: #333333;
+    background-color: #000000;
     color: #DDDDDD;
 }
 
@@ -38,4 +38,25 @@
 
 .btn-danger{
     margin-left: 10px;
+}
+
+#navFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
+}
+
+#navFooter ul {
+  list-style: none;
+}
+
+#navFooter li {
+  display: inline-flex;
+}
+
+.login-container{
+  padding: 20px;
+  text-align: center;
 }
