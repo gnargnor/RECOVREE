@@ -1,5 +1,36 @@
-<p>This is Check In 1 view</p>
-<p>How are you feeling today?></p>
+<div class = 'wrapper'>
+  <p>This is Check In 1 view</p>
+  <p>How are you feeling today?</p>
+
+  <form name = 'feelingsForm'>
+    <div>
+      <label>Angry</label>
+      <select>
+        <option value = '' disabled selected> --- </option>
+        <option value= 'True'>True</option>
+        <option value= 'False'>False</option>
+      </select>
+    </div>
+    <!-- ends angry -->
+
+    <div>
+      <label>Anxious</label>
+      <select>
+        <option value = '' disabled selected> --- </option>
+        <option value= 'True'>True</option>
+        <option value= 'False'>False</option>
+      </select>
+    </div>
+    <!-- end anxious -->
+
+  <br>
+  <button ng-click = 'nextButton()'>Next</button>
+  </form>
+  <!-- ends feelingsForm -->
+</div>
+<!-- ends wrapper -->
+
+
 <!-- <form name='newPlaceForm'>
 
     <div flex-sm>
@@ -80,4 +111,3 @@
     </div>
 
 </form> -->
-<button>Next</button>
