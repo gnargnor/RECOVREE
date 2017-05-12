@@ -38,4 +38,10 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         });
       }
     }
+
+  // REGISTRATION FORM
+
+    // Capture Into MemberSchema
+
+    // Capture Into RegistrationSchema
 }]);
