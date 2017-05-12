@@ -1,14 +1,53 @@
 <div class="container">
   <h1 class="lead">Register User</h1>
   <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
+  <!-- Captures Info into MemberSchema -->
   <form ng-submit="registerUser()">
     <div>
-        <label for="username">Username:</label>
+        <label for="username">Phone Number:</label>
         <input type="text" ng-model="user.username" />
     </div>
     <div>
         <label for="password">Password:</label>
         <input type="password" ng-model="user.password" />
+    </div>
+
+  <!-- Captures Info into RegistrationSchema -->
+    <div>
+        <label for="username">State:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">County:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">Gender:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">Birth Year:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">Drugs of Choice:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">Sobriety Date:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">Form of Program Payment:</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">Are you currently taking prescription medication?</label>
+        <input type="text" ng-model="user.username" />
+    </div>
+    <div>
+        <label for="username">I agree to the Terms of Use</label>
+        <input type="text" ng-model="user.username" />
     </div>
     <input class="btn btn-default" type="submit" name="submit" value="Register" />
     <a href="#login">Cancel</a>
