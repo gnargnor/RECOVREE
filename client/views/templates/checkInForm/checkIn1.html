@@ -1,17 +1,29 @@
 <div class = 'wrapper'>
-  <p>This is Check In 1 view</p>
   <p>How are you feeling today?</p>
 
-    <div>
+    <!-- <div>
       <label>{{anxious}}</label>
       <select ng-model = 'feeling.value'>
-        <option value = '' disabled selected> --- </option>
+        <option value = '' disabled selected> </option>
         <option value= 'True'>True</option>
         <option value= 'False'>False</option>
       </select>
-    </div>
+    </div> -->
     <!-- ends anxious -->
-    <div>{{feeling.value}}</div>
+    <!-- <div>{{feeling.value}}</div> -->
+
+  <form name="dailyFeelingsForm" novalidate>
+
+      <div class="form-group" ng-repeat="feeling in feelings">
+      <ng-form name="feelingForm">
+          <label>{{ feeling.name }}</label>
+          <input type="text" class="form-control" name="value" ng-model="feeling.value">
+      </ng-form>
+      </div>
+
+  </form>
+
+  {{ todaysFeelings }}
 
   <br>
   <button ng-click = 'nextButton()'>Next</button>
