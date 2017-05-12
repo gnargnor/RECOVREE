@@ -1,2 +1,21 @@
-<p>This is Check In 1 view</p>
-<button>Next</button>
+<div class = 'wrapper'>
+  <p>This is Check In 1 view</p>
+  <p>How are you feeling today?</p>
+
+    <div>
+      <label>{{anxious}}</label>
+      <select ng-model = 'feeling.value'>
+        <option value = '' disabled selected> --- </option>
+        <option value= 'True'>True</option>
+        <option value= 'False'>False</option>
+      </select>
+    </div>
+    <!-- ends anxious -->
+    <div>{{feeling.value}}</div>
+
+  <br>
+  <button ng-click = 'nextButton()'>Next</button>
+  </form>
+  <!-- ends feelingsForm -->
+</div>
+<!-- ends wrapper -->

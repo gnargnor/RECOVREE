@@ -56,7 +56,20 @@
   display: inline-flex;
 }
 
+
+/*keith*/
 .login-container{
   padding: 20px;
   text-align: center;
+}
+
+.wrapper{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grey{
+  background-color: gainsboro;
 }
