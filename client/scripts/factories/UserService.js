@@ -42,7 +42,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     reflectionObject.selfishDishonest = false;
     reflectionObject.howSelfshDishnt = '';
     reflectionObject.tomorrowGoal = '';
-    reflectionObject.dailyGoal = '';
+    reflectionObject.dailyGoal = false;
     reflectionObject.gratitude = '';
     reflectionObject.peerSupport = false;
     reflectionObject.counselor = false;

@@ -1,5 +1,22 @@
-<p>This is Check In 6 view</p>
-<p>Did you connect with your sponsor/mentor today</p>
-<p>How many group meetings did you attend today?</p>
-<p>Did you engage in any service or community work today?</p>
-<button>Next</button>
+<div class = 'wrapper'>
+
+  <p>Did you connect with your sponsor/mentor today</p>
+  <md-switch ng-model="reflectionObject.spnsrMntrConnect">
+    Switch 1: {{ reflectionObject.spnsrMntrConnect }}
+  </md-switch>
+
+  <p>How many group meetings did you attend today?</p>
+  <md-switch ng-model="reflectionObject.groupMeet">
+    Switch 1: {{ reflectionObject.groupMeet }}
+  </md-switch>
+
+  <p>Did you engage in any service or community work today?</p>
+  <md-switch ng-model="reflectionObject.commntyService">
+    Switch 1: {{ reflectionObject.commntyService }}
+  </md-switch>
+
+  {{ reflectionObject }}
+  <br>
+  <button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</button>
+</div>
+<!-- ends wrapper -->

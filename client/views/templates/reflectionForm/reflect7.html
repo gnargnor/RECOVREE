@@ -1,3 +1,22 @@
-<p>This is Check In 7 view</p>
-<p>Did any of the following create stress or anxitey today?</p>
-<button>Next</button>
+<div class = 'wrapper'>
+  <p>Did any of the following create stress or anxitey today?</p>
+
+  <form name="dailyStressorsForm" novalidate>
+
+      <div class="form-group" ng-repeat="stress in reflectionObject.stressors">
+      <ng-form name="stressForm">
+          <button type="button" ng-class = "{selectedTrue:(stress.value === true)}" ng-click = 'toggleFeeling(stress)' >
+            {{stress.name}}
+          </button>
+      </ng-form>
+      </div>
+  </form>
+
+  {{ reflectionObject }}
+
+  <br>
+  <button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</button>
+  </form>
+  <!-- ends feelingsForm -->
+</div>
+<!-- ends wrapper -->
