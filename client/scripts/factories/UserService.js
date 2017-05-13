@@ -77,6 +77,12 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
       console.log("$http.post:", postObject);
       //this funciton will need to post to the database
       //posts date, id, and feelings
+    },
+
+    updateReflectionForm: function (putObject){
+      console.log("$http.put:", putObject);
+      //this funciton will need to update the database
+      //find by id and date then update
     }
 
   };
