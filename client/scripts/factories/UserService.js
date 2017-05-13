@@ -1,5 +1,7 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
   console.log('User Service Loaded');
+
+  //created userObject
   var userObject = {};
 
   //builds reflectionObject
@@ -46,7 +48,35 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     reflectionObject.counselor = false;
     reflectionObject.reflectionDate = new Date().getTime() /1000;
     reflectionObject.userObject = userObject;
+    reflectionObject.formPosition = 1;
   //finishes building reflectionObject
+
+  function postToReflectionForm(reflectionObject){
+    console.log("$http.post:", reflectionObject);
+    //this funciton will need to post to the database
+    //posts date, id, and feelings
+    //beacuse of async we will need to .then take the response set the
+    //reflectionObject = response and then pass reflectionObject into the
+    //advance to next function
+    advanceReflectionForm(reflectionObject);
+  }//ends postToReflectionForm
+
+  function updateReflectionForm(reflectionObject){
+    console.log("$http.put:", reflectionObject);
+    //this funciton will need to update the database
+    //find by id and date then update
+    //beacuse of async we will need to .then take the response set the
+    //reflectionObject = response and then pass reflectionObject into the
+    //advance to next function
+    advanceReflectionForm(reflectionObject);
+  }//ends updateReflectionForm
+
+  function advanceReflectionForm(reflectionObject){
+    //moves on to the next question
+    reflectionObject.formPosition += 1;
+    console.log("formPosition",reflectionObject.formPosition);
+    $location.path('/reflection-form/reflect-'+reflectionObject.formPosition);
+  }//ends advanceReflectionForm
 
   //return out of UserService Factory
   return {
@@ -73,17 +103,20 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
         });
     },
 
-    postToReflectionForm: function (postObject){
-      console.log("$http.post:", postObject);
-      //this funciton will need to post to the database
-      //posts date, id, and feelings
-    },
+    // takes reflectionObject and either posts it or updates it then advances to the next screen
+    reflectionFormNextButton: function (reflectionObject){
+      console.log("you clicked the next button");
+      console.log("reflectionObject:", reflectionObject);
 
-    updateReflectionForm: function (putObject){
-      console.log("$http.put:", putObject);
-      //this funciton will need to update the database
-      //find by id and date then update
-    }
+      if (reflectionObject.formPostion === 1){
+        //makes intial post to database
+        postToReflectionForm(reflectionObject);
+      }
+      else{
+        //updates today's reflectionObject
+        updateReflectionForm(reflectionObject);
+      }
+    }//ends reflectionFormNextButton
 
   };
 }]);

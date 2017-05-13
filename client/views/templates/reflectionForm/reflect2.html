@@ -1,7 +1,11 @@
 <div class = 'wrapper'>
-  <p>Did you use any drugs or alcohol today?</p>
+  <p>Did you refrain from using any drugs or alcohol today?</p>
+  <md-switch ng-model="reflectionObject.drugAlcoholIntake">
+    Switch 1: {{ reflectionObject.drugAlcoholIntake }}
+  </md-switch>
+
   {{ reflectionObject }}
   <br>
-  <button ng-click = 'nextButton(reflectionObject)'>Next</button>
+  <button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</button>
 </div>
 <!-- ends wrapper -->

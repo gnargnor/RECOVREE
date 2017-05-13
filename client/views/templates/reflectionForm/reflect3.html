@@ -1,3 +1,12 @@
-<p>This is Check In 3 view</p>
-<p>Have you taken your medication today?</p>
-<button>Next</button>
+
+<div class = 'wrapper'>
+  <p>Have you taken your medication today?</p>
+  <md-switch ng-model="reflectionObject.medication">
+    Switch 1: {{ reflectionObject.medication }}
+  </md-switch>
+
+  {{ reflectionObject }}
+  <br>
+  <button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</button>
+</div>
+<!-- ends wrapper -->
