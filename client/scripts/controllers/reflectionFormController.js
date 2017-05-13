@@ -27,8 +27,9 @@ myApp.controller('ReflectionFormController', ['$scope', '$http', '$location', 'U
 
   //from factory
   $scope.userObject = UserService.userObject;
+  $scope.reflectionObject = UserService.reflectionObject;
+  console.log("$scope.reflectionObject", $scope.reflectionObject);
   $scope.postToReflectionForm = UserService.postToReflectionForm;
-  $scope.feelingsObject = UserService.feelingsObject;
 
   //from controller
   $scope.nextButton = nextButton;

@@ -7,19 +7,23 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
     //creates feelings array
     var listOfFeelings = ['angry','anxious','depressed'];
-    var feelingsArray = function(listOfFeelings){
-      for (var i = 0; i < listOfFeelings.length; i++){
-        feelingsArray.push({feeling: listOfFeelings[i], value: 'false'});
-      }//ends loop
-    };
+    var feelingsArray = buildArray(listOfFeelings);
 
     //creates stressors array
     var listOfStressors = ['children','money'];
-    var stressorsArray = function(listOfStressors){
-      for (var i = 0; i < listOfStressors.length; i++){
-        stressorsArray.push({stressor: listOfStressors[i], value: 'false'});
+    var stressorsArray = buildArray(listOfStressors);
+
+    function buildArray(list){
+      var newArray = [];
+      for (var i = 0; i < list.length; i++){
+        console.log("is this happening?");
+        var newObject = {};
+        newObject.name = list[i];
+        newObject.value = false;
+        newArray.push(newObject);
       }//ends loop
-    };
+      return newArray;
+    }
 
     // assigns key value pairs
     reflectionObject.feelings = feelingsArray;
@@ -43,8 +47,10 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     reflectionObject.reflectionDate = new Date().getTime() /1000;
     reflectionObject.userObject = userObject;
 
+  //return out of UserService Factory
   return {
     userObject : userObject,
+    reflectionObject: reflectionObject,
 
     getuser : function(){
       $http.get('/user').then(function(response) {
