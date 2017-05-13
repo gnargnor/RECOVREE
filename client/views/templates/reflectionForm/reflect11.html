@@ -1,4 +1,17 @@
-<p>This is Check In 11 view</p>
-<p>If available today, would you connect to an online peer support group to engage with others in recovery?</p>
-<p>If available today, would you have contacted an alcohol/drug or mental health counselor by phone or FaceTime?</p>
-<button>Next</button>
+<div class = 'wrapper'>
+
+  <p>If available today, would you connect to an online peer support group to engage with others in recovery?</p>
+  <md-switch class = 'md-primary' ng-model="reflectionObject.peerSupport">
+    Switch 1: {{ reflectionObject.peerSupport }}
+  </md-switch>
+
+  <p>If available today, would you connect to an online peer support group to engage with others in recovery?</p>
+  <md-switch ng-model="reflectionObject.counselor">
+    Switch 1: {{ reflectionObject.counselor }}
+  </md-switch>
+
+  {{ reflectionObject }}
+  <br>
+  <button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</button>
+</div>
+<!-- ends wrapper -->
