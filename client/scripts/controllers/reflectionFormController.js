@@ -1,25 +1,19 @@
 myApp.controller('ReflectionFormController', ['$scope', '$http', '$location', 'UserService', function($scope, $http, $location, UserService) {
   console.log('ReflectionFormController sourced!');
 
+  //toggles feeling
+  function toggleFeeling(feeling){
+    console.log("feeling:",feeling);
+    feeling.value = !feeling.value;
+  }
 
-  function nextButton(feelings){
+  // takes reflectionObject and either posts it or updates it. 
+  function nextButton(reflectionObject){
     console.log("you clicked the next button");
-    console.log("feeling object", feelings);
-
-    //copies the object
-    var todaysFeelings = angular.copy(feelings);
-
-    //testing what userObject is
-    console.log('userObject', $scope.userObject);
+    console.log("reflectionObject:", reflectionObject);
 
     //makes intial post to database
-    $scope.postToReflectionForm(todaysFeelings);
-
-    //clears out feelings object answers
-    for (var i = 0; i < feelings.length; i++ ){
-      feelings[i].value = '';
-    }
-    console.log("feelings after clean out", feelings);
+    $scope.postToReflectionForm(reflectionObject);
 
     //moves on to the next question
     // $location.path("/reflection-form/reflect-2");
@@ -28,10 +22,10 @@ myApp.controller('ReflectionFormController', ['$scope', '$http', '$location', 'U
   //from factory
   $scope.userObject = UserService.userObject;
   $scope.reflectionObject = UserService.reflectionObject;
-  console.log("$scope.reflectionObject", $scope.reflectionObject);
   $scope.postToReflectionForm = UserService.postToReflectionForm;
 
   //from controller
+  $scope.toggleFeeling = toggleFeeling;
   $scope.nextButton = nextButton;
 
 }]);

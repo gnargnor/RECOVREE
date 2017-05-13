@@ -73,3 +73,7 @@
 .grey{
   background-color: gainsboro;
 }
+
+.selectedTrue{
+  background-color: lightyellow;
+}

@@ -3,20 +3,16 @@
 
   <form name="dailyFeelingsForm" novalidate>
 
-      <div class="form-group" ng-repeat="feeling in feelingsObject.feelingsArray">
+      <div class="form-group" ng-repeat="feeling in reflectionObject.feelings">
       <ng-form name="feelingForm">
-          <label>{{ feeling.name }}</label>
-          <br>
-          <select ng-model = 'feeling.value'>
-            <option value = '' disabled selected>Select</option>
-            <option value= 'True'>True</option>
-            <option value= 'False'>False</option>
-          </select>
+          <button type="button" ng-class = "{selectedTrue:(feeling.value === true)}" ng-click = 'toggleFeeling(feeling)' >
+            {{feeling.name}}
+          </button>
       </ng-form>
       </div>
   </form>
 
-  {{ feelingsObject.feelingsArray }}
+  {{ reflectionObject }}
 
   <br>
   <button ng-click = 'nextButton(feelingsObject.feelingsArray)'>Next</button>

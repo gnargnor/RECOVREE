@@ -13,10 +13,10 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     var listOfStressors = ['children','money'];
     var stressorsArray = buildArray(listOfStressors);
 
+    //builds an array of objects based on a list of values
     function buildArray(list){
       var newArray = [];
       for (var i = 0; i < list.length; i++){
-        console.log("is this happening?");
         var newObject = {};
         newObject.name = list[i];
         newObject.value = false;
@@ -46,6 +46,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     reflectionObject.counselor = false;
     reflectionObject.reflectionDate = new Date().getTime() /1000;
     reflectionObject.userObject = userObject;
+  //finishes building reflectionObject
 
   //return out of UserService Factory
   return {
