@@ -1,3 +1,7 @@
-<p>This is Check In 2 view</p>
-<p>Did you use any drugs or alcohol today?</p>
-<button>Next</button>
+<div class = 'wrapper'>
+  <p>Did you use any drugs or alcohol today?</p>
+  {{ reflectionObject }}
+  <br>
+  <button ng-click = 'nextButton(reflectionObject)'>Next</button>
+</div>
+<!-- ends wrapper -->
