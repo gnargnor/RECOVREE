@@ -1,27 +1,50 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
   console.log('User Service Loaded');
-  var feelings = [
-    {
-      name: 'angry',
-      value: ''
-    },
-    {
-      name: 'anxious',
-      value: ''
-    },
-    {
-      name: 'depressed',
-      value: ''
-    },
-  ];
-  var feelingsObject = {feelingsArray: feelings};
-  console.log("feelingsObject", feelingsObject);
-
   var userObject = {};
+
+  //builds reflectionObject
+  var reflectionObject = {};
+
+    //creates feelings array
+    var listOfFeelings = ['angry','anxious','depressed'];
+    var feelingsArray = function(listOfFeelings){
+      for (var i = 0; i < listOfFeelings.length; i++){
+        feelingsArray.push({feeling: listOfFeelings[i], value: 'false'});
+      }//ends loop
+    };
+
+    //creates stressors array
+    var listOfStressors = ['children','money'];
+    var stressorsArray = function(listOfStressors){
+      for (var i = 0; i < listOfStressors.length; i++){
+        stressorsArray.push({stressor: listOfStressors[i], value: 'false'});
+      }//ends loop
+    };
+
+    // assigns key value pairs
+    reflectionObject.feelings = feelingsArray;
+    reflectionObject.drugAlcoholIntake = false;
+    reflectionObject.medication = false;
+    reflectionObject.sleep = 0;
+    reflectionObject.dream = false;
+    reflectionObject.exercise = 0;
+    reflectionObject.food = 0;
+    reflectionObject.spnsrMntrConnect = false;
+    reflectionObject.groupMeet = false;
+    reflectionObject.commntyService = false;
+    reflectionObject.stressors = stressorsArray;
+    reflectionObject.selfishDishonest = false;
+    reflectionObject.howSelfshDishnt = '';
+    reflectionObject.tomorrowGoal = '';
+    reflectionObject.dailyGoal = '';
+    reflectionObject.gratitude = '';
+    reflectionObject.peerSupport = false;
+    reflectionObject.counselor = false;
+    reflectionObject.reflectionDate = new Date().getTime() /1000;
+    reflectionObject.userObject = userObject;
 
   return {
     userObject : userObject,
-    feelingsObject: feelingsObject,
 
     getuser : function(){
       $http.get('/user').then(function(response) {
