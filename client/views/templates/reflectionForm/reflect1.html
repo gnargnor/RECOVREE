@@ -1,0 +1,26 @@
+<div class = 'wrapper'>
+  <p>How are you feeling today?</p>
+
+  <form name="dailyFeelingsForm" novalidate>
+
+      <div class="form-group" ng-repeat="feeling in feelingsObject.feelingsArray">
+      <ng-form name="feelingForm">
+          <label>{{ feeling.name }}</label>
+          <br>
+          <select ng-model = 'feeling.value'>
+            <option value = '' disabled selected>Select</option>
+            <option value= 'True'>True</option>
+            <option value= 'False'>False</option>
+          </select>
+      </ng-form>
+      </div>
+  </form>
+
+  {{ feelingsObject.feelingsArray }}
+
+  <br>
+  <button ng-click = 'nextButton(feelingsObject.feelingsArray)'>Next</button>
+  </form>
+  <!-- ends feelingsForm -->
+</div>
+<!-- ends wrapper -->

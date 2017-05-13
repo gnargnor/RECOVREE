@@ -1,10 +1,27 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
   console.log('User Service Loaded');
+  var feelings = [
+    {
+      name: 'angry',
+      value: ''
+    },
+    {
+      name: 'anxious',
+      value: ''
+    },
+    {
+      name: 'depressed',
+      value: ''
+    },
+  ];
+  var feelingsObject = {feelingsArray: feelings};
+  console.log("feelingsObject", feelingsObject);
 
   var userObject = {};
 
   return {
     userObject : userObject,
+    feelingsObject: feelingsObject,
 
     getuser : function(){
       $http.get('/user').then(function(response) {
@@ -24,6 +41,13 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
           console.log('logged out');
           $location.path("/home");
         });
+    },
+
+    postToReflectionForm: function (postObject){
+      console.log("$http.post:", postObject);
+      //this funciton will need to post to the database
+      //posts date, id, and feelings
     }
+
   };
 }]);
