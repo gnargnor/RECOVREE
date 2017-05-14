@@ -11,14 +11,8 @@ gv.testFunc('Hello World');
 var UserSchema = new Schema({
     username: {type: String, required: true, index: {unique: true}},
     password: {type: String, required: true},
-<<<<<<< HEAD
     userType: {type: Number, default: 2},          //1: admin, 2: member - will defualt to 2, unless on admin log-in, then set to 1
     memberID : {type: Number, index: {unique:true}},
-=======
-    // userType: {type: Number}, //1: admin, 2: member - Will be defined in the log-in screen - client side
-    // memberID : {type: Number, index: {unique:true}},
-    // medication : {type: Boolean}
->>>>>>> 22712d046eae8ec59fb5f393acee614eac8993c6
 });
 
 //generate Random ID number for each new member
