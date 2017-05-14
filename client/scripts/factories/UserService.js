@@ -52,7 +52,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     reflectionObject.gratitude = '';
     reflectionObject.peerSupport = false;
     reflectionObject.counselor = false;
-    reflectionObject.reflectionDate = date;
+    reflectionObject.reflectionDate = '';
     reflectionObject.reflectionTime = time;
     reflectionObject.userObject = userObject;
     reflectionObject.formPosition = 1;
@@ -100,8 +100,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
               // user has a curret session on the server
               userObject.userName = response.data.username;
               console.log('User Data: ', userObject.userName);
-              console.log('DATE', date);
-              console.log('TIME', time);
           } else {
               // user has no session, bounce them back to the login page
               $location.path("/home");

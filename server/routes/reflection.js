@@ -23,15 +23,17 @@ var ReflectionSchema = mongoose.Schema({
   selfishDishonest: {type: Boolean},
   howSelfshDishnt: {type: String},
   tomorrowGoal: {type: String},
-  dailyGoal: {type: String},
+  dailyGoal: {type: Boolean},
   gratitude: {type: String},
   peerSupport: {type: Boolean},
   counselor: {type: Boolean},
-  checkInDate: {type: Date, default: Date.now},
+  // reflectionDate: {type: String},
+  // reflectionTime: {type: String},
+  reflectionDate: {type: Date, default: Date.now},
   // memberID: {type: Schema.ObjectId, ref: 'Registration'} //references Registration Schema
 });
 
-var Reflection = mongoose.model('reflection', ReflectionSchema, 'recovree');
+var Reflection = mongoose.model('reflection', ReflectionSchema);
 
 router.get('/', function (req, res) {
   Recovree.find({}, function(err, recovree){
@@ -44,47 +46,62 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function(req,res){
-  console.log('-----REFLECTION-----',req.body);
-  console.log('--date---', req.body.date);
-  console.log('--id---', req.user._id);
-  console.log('--Feelings---', req.body.feelings);
 
-//   var reflection = req.body;
-//   var newReflection = new Reflection({
-//     feelings : reflection.feelings,
-//     drugAlcoholIntake: reflection.drugAlcoholIntake,
-//     medication: reflection.medication,
-//     sleep: reflection.sleep,
-//     dream: reflection.dream,
-//     exercise: reflection.exercise,
-//     food: reflection.food,
-//     spnsrMntrConnect: reflection.spnsrMntrConnect,
-//     groupMeet: reflection.groupMeet,
-//     commntyService: reflection.commntyService,
-//     stressors: reflection.stressors,
-//     selfishDishonest: reflection.selfishDishonest,
-//     howSelfshDishnt: reflection.howSelfshDishnt,
-//     tomorrowGoal: reflection.tomorrowGoal,
-//     dailyGoal: reflection.dailyGoal,
-//     gratitude: reflection.gratitude,
-//     peerSupport: reflection.peerSupport,
-//     counselor: reflection.counselor,
-//     reflectionDate: reflection.checkInDate,
-//     // memberID: users.memberID
-//   });
-//
-//   newForm.save(newReflection, function(err, savedReflection){
-//     if(err){
-//       console.log("Error: ", err);
-//       res.sendStatus(500);
-//     }
-//     console.log('saved to db ----------', newReflection);
-//     res.send(savedReflection);
-//   });
+  var reflection = req.body;
+  var newReflection = new Reflection({
+    id : req.user._id,
+    date: reflection.reflectionDate,
+    // time: reflection.reflectionTime,
+    feelings : reflection.feelings,
+  });
+
+  console.log('----NEW REFLECTION---', newReflection);
+
+  newReflection.save(newReflection, function(err, savedReflection){
+    if(err){
+      console.log("Error: ", err);
+      res.sendStatus(500);
+    }
+    console.log('saved to db ----------', newReflection);
+    res.send(savedReflection);
+  });
 });
+
 
 router.put('/', function (req, res) {
   console.log('----PUT---', req.body);
+
+  // var reflection = req.body;
+  // var newReflection = new Reflection({
+  //   drugAlcoholIntake: reflection.drugAlcoholIntake,
+  //   medication: reflection.medication,
+  //   sleep: reflection.sleep,
+  //   dream: reflection.dream,
+  //   exercise: reflection.exercise,
+  //   food: reflection.food,
+  //   spnsrMntrConnect: reflection.spnsrMntrConnect,
+  //   groupMeet: reflection.groupMeet,
+  //   commntyService: reflection.commntyService,
+  //   stressors: reflection.stressors,
+  //   selfishDishonest: reflection.selfishDishonest,
+  //   howSelfshDishnt: reflection.howSelfshDishnt,
+  //   tomorrowGoal: reflection.tomorrowGoal,
+  //   dailyGoal: reflection.dailyGoal,
+  //   gratitude: reflection.gratitude,
+  //   peerSupport: reflection.peerSupport,
+  //   counselor: reflection.counselor,
+  //   reflectionDate: reflection.reflectionDate,
+  //   // memberID: users.memberID
+  // });
+  //
+  // newForm.save(newReflection, function(err, savedReflection){
+  //   if(err){
+  //     console.log("Error: ", err);
+  //     res.sendStatus(500);
+  //   }
+  //   console.log('saved to db ----------', newReflection);
+  //   res.send(savedReflection);
+  // });
 });
 
 
