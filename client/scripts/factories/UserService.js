@@ -1,10 +1,90 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
   console.log('User Service Loaded');
 
+  //created userObject
   var userObject = {};
 
+  //builds reflectionObject
+  var reflectionObject = {};
+
+    //creates feelings array
+    var listOfFeelings = ['angry','anxious','depressed', 'distant', 'discerning',
+      'discouraged', 'excited', 'frustrated', 'grateful', 'guilty', 'happy', 'hopeful',
+      'hostile', 'insignificant', 'jealous', 'loving', 'motivated', 'numb', 'optimistic',
+      'overwhelmed', 'peaceful', 'proud', 'sad', 'safe', 'thoughtful', 'valuable'];
+    var feelingsArray = buildArray(listOfFeelings);
+
+    //creates stressors array
+    var listOfStressors = ['children','money'];
+    var stressorsArray = buildArray(listOfStressors);
+
+    //builds an array of objects based on a list of values
+    function buildArray(list){
+      var newArray = [];
+      for (var i = 0; i < list.length; i++){
+        var newObject = {};
+        newObject.name = list[i];
+        newObject.value = false;
+        newArray.push(newObject);
+      }//ends loop
+      return newArray;
+    }
+
+    // assigns key value pairs
+    reflectionObject.feelings = feelingsArray;
+    reflectionObject.drugAlcoholIntake = false;
+    reflectionObject.medication = false;
+    reflectionObject.sleep = 0;
+    reflectionObject.dream = false;
+    reflectionObject.exercise = 0;
+    reflectionObject.food = 0;
+    reflectionObject.spnsrMntrConnect = false;
+    reflectionObject.groupMeet = false;
+    reflectionObject.commntyService = false;
+    reflectionObject.stressors = stressorsArray;
+    reflectionObject.selfishDishonest = false;
+    reflectionObject.howSelfshDishnt = '';
+    reflectionObject.tomorrowGoal = '';
+    reflectionObject.dailyGoal = false;
+    reflectionObject.gratitude = '';
+    reflectionObject.peerSupport = false;
+    reflectionObject.counselor = false;
+    reflectionObject.reflectionDate = new Date().getTime() /1000;
+    reflectionObject.userObject = userObject;
+    reflectionObject.formPosition = 1;
+  //finishes building reflectionObject
+
+  function postToReflectionForm(reflectionObject){
+    console.log("$http.post:", reflectionObject);
+    //this funciton will need to post to the database
+    //posts date, id, and feelings
+    //beacuse of async we will need to .then take the response set the
+    //reflectionObject = response and then pass reflectionObject into the
+    //advance to next function
+    advanceReflectionForm(reflectionObject);
+  }//ends postToReflectionForm
+
+  function updateReflectionForm(reflectionObject){
+    console.log("$http.put:", reflectionObject);
+    //this funciton will need to update the database
+    //find by id and date then update
+    //beacuse of async we will need to .then take the response set the
+    //reflectionObject = response and then pass reflectionObject into the
+    //advance to next function
+    advanceReflectionForm(reflectionObject);
+  }//ends updateReflectionForm
+
+  function advanceReflectionForm(reflectionObject){
+    //moves on to the next question
+    reflectionObject.formPosition += 1;
+    console.log("formPosition",reflectionObject.formPosition);
+    $location.path('/reflection-form/reflect-'+reflectionObject.formPosition);
+  }//ends advanceReflectionForm
+
+  //return out of UserService Factory
   return {
     userObject : userObject,
+    reflectionObject: reflectionObject,
 
     getuser : function(){
       $http.get('/user').then(function(response) {
@@ -24,6 +104,22 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
           console.log('logged out');
           $location.path("/home");
         });
-    }
+    },
+
+    // takes reflectionObject and either posts it or updates it then advances to the next screen
+    reflectionFormNextButton: function (reflectionObject){
+      console.log("you clicked the next button");
+      console.log("reflectionObject:", reflectionObject);
+
+      if (reflectionObject.formPostion === 1){
+        //makes intial post to database
+        postToReflectionForm(reflectionObject);
+      }
+      else{
+        //updates today's reflectionObject
+        updateReflectionForm(reflectionObject);
+      }
+    }//ends reflectionFormNextButton
+
   };
 }]);

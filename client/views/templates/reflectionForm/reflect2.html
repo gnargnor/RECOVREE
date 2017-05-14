@@ -1,0 +1,11 @@
+<div class = 'wrapper'>
+  <p>Did you use any drugs or alcohol today?</p>
+  <md-switch class = 'md-primary' aria-label='Use drugs or alcohol today?' ng-true-value="'Yes'" ng-false-value="'No'" ng-model="reflectionObject.drugAlcoholIntake">
+    {{ reflectionObject.drugAlcoholIntake }}
+  </md-switch>
+
+  {{ reflectionObject }}
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->

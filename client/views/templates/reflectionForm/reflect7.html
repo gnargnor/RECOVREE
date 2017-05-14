@@ -1,0 +1,20 @@
+<div class = 'wrapper'>
+  <p>Did any of the following create stress or anxitey today?</p>
+
+  <form name="dailyStressorsForm" novalidate>
+
+      <ng-form name="stressForm" class="form-group" ng-repeat="stress in reflectionObject.stressors">
+          <button class = 'feeling-button' type="button" ng-class = "{selectedTrue:(stress.value === true)}" ng-click = 'toggleFeeling(stress)' >
+            {{stress.name}}
+          </button>
+      </ng-form>
+  </form>
+
+  {{ reflectionObject }}
+
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+  </form>
+  <!-- ends feelingsForm -->
+</div>
+<!-- ends wrapper -->

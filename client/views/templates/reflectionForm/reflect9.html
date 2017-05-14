@@ -1,0 +1,23 @@
+<div class = 'wrapper'>
+
+  <md-input-container class="md-block">
+    <label>What is your goal you would like to accomplish tomorrow?</label>
+    <textarea ng-model="reflectionObject.tomorrowGoal" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+
+  <p>Display daily goal from yesterday here. This will require some logic.
+  I think the best solution will be to add a couple of properties to the
+  reflectionObject when the user gets to the home page we check if user takes
+  meds, and if user had a goal from the day before. Then we will need to use
+  ng-if or if we need to skip a view.</p>
+
+  <p>Did you complete your daily goal from yesterday?</p>
+  <md-switch ng-model="reflectionObject.dailyGoal">
+    Switch 1: {{ reflectionObject.dailyGoal }}
+  </md-switch>
+
+  {{ reflectionObject }}
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->
