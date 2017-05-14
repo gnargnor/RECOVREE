@@ -3,19 +3,19 @@
 
   <form name="dailyFeelingsForm" novalidate>
 
-      <div class="form-group" ng-repeat="feeling in reflectionObject.feelings">
-      <ng-form name="feelingForm">
-          <button type="button" ng-class = "{selectedTrue:(feeling.value === true)}" ng-click = 'toggleFeeling(feeling)' >
+      <!-- <div class="form-group" ng-repeat="feeling in reflectionObject.feelings"> -->
+      <ng-form name="feelingForm" class="form-group" ng-repeat="feeling in reflectionObject.feelings">
+          <button class = 'feeling-button' type="button" ng-class = "{selectedTrue:(feeling.value === true)}" ng-click = 'toggleFeeling(feeling)' >
             {{feeling.name}}
           </button>
       </ng-form>
-      </div>
+      <!-- </div> -->
   </form>
 
   {{ reflectionObject }}
 
   <br>
-  <button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</button>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
   </form>
   <!-- ends feelingsForm -->
 </div>

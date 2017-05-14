@@ -77,3 +77,12 @@
 .selectedTrue{
   background-color: lightyellow;
 }
+
+button.feeling-button{
+  background-color: gainsboro;
+  border-radius: 5px;
+  display: inline-flex;
+
+  /*font-size: 75px;*/
+  /*min-width: 550px;*/
+}
