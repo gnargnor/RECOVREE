@@ -37,5 +37,28 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
           $scope.message = "Please try again.";
         });
       }
+
+
+
     };
+
+  // REGISTRATION FORM
+
+    // Generate State Dropdown Options
+    $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+      'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
+      'WY').split(' ').map(function(state) {
+        return {abbrev: state};
+     });
+
+    // Generate Gender Dropdown Options
+    var comma = ',';
+    $scope.genders = ('Female,Male,Trans,Other,Prefer Not to Answer').split(comma).map(function(gender) {
+        return {gender: gender};
+     });
+
+    // Capture Into MemberSchema
+
+    // Capture Into RegistrationSchema
+
 }]);
