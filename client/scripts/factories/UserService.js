@@ -8,7 +8,10 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   var reflectionObject = {};
 
     //creates feelings array
-    var listOfFeelings = ['angry','anxious','depressed'];
+    var listOfFeelings = ['angry','anxious','depressed', 'distant', 'discerning',
+      'discouraged', 'excited', 'frustrated', 'grateful', 'guilty', 'happy', 'hopeful',
+      'hostile', 'insignificant', 'jealous', 'loving', 'motivated', 'numb', 'optimistic',
+      'overwhelmed', 'peaceful', 'proud', 'sad', 'safe', 'thoughtful', 'valuable'];
     var feelingsArray = buildArray(listOfFeelings);
 
     //creates stressors array

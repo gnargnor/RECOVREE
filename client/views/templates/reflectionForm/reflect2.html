@@ -1,7 +1,7 @@
 <div class = 'wrapper'>
   <p>Did you use any drugs or alcohol today?</p>
-  <md-switch ng-model="reflectionObject.drugAlcoholIntake">
-    Switch 1: {{ reflectionObject.drugAlcoholIntake }}
+  <md-switch class = 'md-primary' aria-label='Use drugs or alcohol today?' ng-true-value="'Yes'" ng-false-value="'No'" ng-model="reflectionObject.drugAlcoholIntake">
+    {{ reflectionObject.drugAlcoholIntake }}
   </md-switch>
 
   {{ reflectionObject }}
