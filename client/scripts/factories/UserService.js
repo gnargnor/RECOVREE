@@ -62,6 +62,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     //reflectionObject = response and then pass reflectionObject into the
     //advance to next function
     advanceReflectionForm(reflectionObject);
+    // $http.post('/reflection', ).then(function(response) {
+    //   console.log('66: POST Reflection', response);
+    // });
   }//ends postToReflectionForm
 
   function updateReflectionForm(reflectionObject){
@@ -109,9 +112,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     // takes reflectionObject and either posts it or updates it then advances to the next screen
     reflectionFormNextButton: function (reflectionObject){
       console.log("you clicked the next button");
-      console.log("reflectionObject:", reflectionObject);
+      console.log("reflectionObject from NEXT Btn:", reflectionObject);
 
-      if (reflectionObject.formPostion === 1){
+      if (reflectionObject.formPosition === 1){
         //makes intial post to database
         postToReflectionForm(reflectionObject);
       }
