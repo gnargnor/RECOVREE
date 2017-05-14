@@ -30,6 +30,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
       return newArray;
     }
 
+    var today = new Date();
+    var date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     // assigns key value pairs
     reflectionObject.feelings = feelingsArray;
     reflectionObject.drugAlcoholIntake = false;
@@ -49,7 +52,8 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     reflectionObject.gratitude = '';
     reflectionObject.peerSupport = false;
     reflectionObject.counselor = false;
-    reflectionObject.reflectionDate = new Date().getTime() /1000;
+    reflectionObject.reflectionDate = date;
+    reflectionObject.reflectionTime = time;
     reflectionObject.userObject = userObject;
     reflectionObject.formPosition = 1;
   //finishes building reflectionObject
@@ -62,9 +66,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     //reflectionObject = response and then pass reflectionObject into the
     //advance to next function
     advanceReflectionForm(reflectionObject);
-    // $http.post('/reflection', ).then(function(response) {
-    //   console.log('66: POST Reflection', response);
-    // });
+    $http.post('/reflection', reflectionObject).then(function(response) {
+      console.log('66: POST Reflection', response);
+    });
   }//ends postToReflectionForm
 
   function updateReflectionForm(reflectionObject){
@@ -88,13 +92,16 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   return {
     userObject : userObject,
     reflectionObject: reflectionObject,
-
+    date: date,
+    time: time,
     getuser : function(){
       $http.get('/user').then(function(response) {
           if(response.data.username) {
               // user has a curret session on the server
               userObject.userName = response.data.username;
               console.log('User Data: ', userObject.userName);
+              console.log('DATE', date);
+              console.log('TIME', time);
           } else {
               // user has no session, bounce them back to the login page
               $location.path("/home");

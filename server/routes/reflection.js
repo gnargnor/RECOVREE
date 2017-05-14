@@ -45,6 +45,10 @@ router.get('/', function (req, res) {
 
 router.post('/', function(req,res){
   console.log('-----REFLECTION-----',req.body);
+  console.log('--date---', req.body.date);
+  console.log('--id---', req.user._id);
+  console.log('--Feelings---', req.body.feelings);
+
 //   var reflection = req.body;
 //   var newReflection = new Reflection({
 //     feelings : reflection.feelings,
@@ -79,7 +83,7 @@ router.post('/', function(req,res){
 //   });
 });
 
-router.post('/', function (req, res) {
+router.put('/', function (req, res) {
   console.log('----PUT---', req.body);
 });
 
