@@ -90,18 +90,27 @@ router.put('/', function (req, res) {
   //   gratitude: reflection.gratitude,
   //   peerSupport: reflection.peerSupport,
   //   counselor: reflection.counselor,
-  //   reflectionDate: reflection.reflectionDate,
   //   // memberID: users.memberID
   // });
-  //
-  // newForm.save(newReflection, function(err, savedReflection){
-  //   if(err){
-  //     console.log("Error: ", err);
-  //     res.sendStatus(500);
-  //   }
-  //   console.log('saved to db ----------', newReflection);
-  //   res.send(savedReflection);
-  // });
+  //edit an employee
+    var reflection = req.body;
+    // var foundReflection = new Reflection(){
+    //
+    // }
+    // Reflection.findByIdAndRemove(reflection, function(err, foundReflection){
+    //   if (err) {
+    //     console.log(err);
+    //     res.sendStatus(500);
+    //   }
+    //   foundReflection.save(function(err, savedEmployee) {
+    //     if (err){
+    //       console.log(err);
+    //       res.sendStatus(500);
+    //     }
+    //     res.send(savedEmployee);
+    //   });
+    // });
+
 });
 
 
