@@ -94,22 +94,22 @@ router.put('/', function (req, res) {
   // });
   //edit an employee
     var reflection = req.body;
-    var foundReflection = new Reflection {
-
-    }
-    Reflection.findByIdAndRemove(reflection, function(err, foundReflection){
-      if (err) {
-        console.log(err);
-        res.sendStatus(500);
-      }
-      foundReflection.save(function(err, savedEmployee) {
-        if (err){
-          console.log(err);
-          res.sendStatus(500);
-        }
-        res.send(savedEmployee);
-      });
-    });
+    // var foundReflection = new Reflection(){
+    //
+    // }
+    // Reflection.findByIdAndRemove(reflection, function(err, foundReflection){
+    //   if (err) {
+    //     console.log(err);
+    //     res.sendStatus(500);
+    //   }
+    //   foundReflection.save(function(err, savedEmployee) {
+    //     if (err){
+    //       console.log(err);
+    //       res.sendStatus(500);
+    //     }
+    //     res.send(savedEmployee);
+    //   });
+    // });
 
 });
 
