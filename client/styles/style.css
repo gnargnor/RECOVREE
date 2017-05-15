@@ -86,3 +86,8 @@ button.feeling-button{
   /*font-size: 75px;*/
   /*min-width: 550px;*/
 }
+
+.md-button{
+  font-size: 10px;
+  min-width: 75px;
+}
