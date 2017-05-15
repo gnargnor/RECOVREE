@@ -1,0 +1,12 @@
+<div class = 'wrapper'>
+
+  <md-input-container class="md-block">
+    <label>What are you tankful for today and why?</label>
+    <textarea ng-model="reflectionObject.gratitude" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+
+  {{ reflectionObject }}
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->

@@ -1,0 +1,14 @@
+<div class = 'wrapper'>
+  <p>Did you exercise today?</p>
+  <md-slider flex class="md-primary" md-discrete ng-model="reflectionObject.exercise" step="1" min="1" max="5" aria-label="rating">
+  </md-slider>
+
+  <p>Rate your food consumption and access for today</p>
+  <md-slider flex class="md-primary" md-discrete ng-model="reflectionObject.food" step="1" min="1" max="5" aria-label="rating">
+  </md-slider>
+
+  {{ reflectionObject }}
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->

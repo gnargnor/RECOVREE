@@ -1,0 +1,24 @@
+<div class = 'wrapper'>
+  <p>How are you feeling today?</p>
+
+  <form name="dailyFeelingsForm"  novalidate>
+
+      <ng-form name="feelingForm" class="form-group" ng-repeat="feeling in reflectionObject.feelings">
+          <md-button class = 'md-raised' ng-class = "{'md-primary':(feeling.value === true)}" ng-click = 'toggleFeeling(feeling)' >
+            {{feeling.name}}
+          </md-button>
+      </ng-form>
+  </form>
+
+  <!-- {{ reflectionObject }} -->
+  <md-input-container class="md-block">
+    <label>Why?</label>
+    <textarea ng-model="reflectionObject.tomorrowGoal" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+
+  <br>
+  <md-button class = 'md-raised' ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+  </form>
+  <!-- ends feelingsForm -->
+</div>
+<!-- ends wrapper -->

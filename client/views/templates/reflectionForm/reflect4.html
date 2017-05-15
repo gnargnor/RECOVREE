@@ -1,0 +1,26 @@
+<div class = 'wrapper'>
+  <p>How did you sleep last night?</p>
+
+  <md-slider-container>
+    <span>Terrible</span>
+    <md-slider flex class="md-primary" md-discrete ng-model="reflectionObject.sleep" step="1" min="1" max="5" aria-label="rating">
+    </md-slider>
+    <span>Great</span>
+  </md-slider-container>
+
+
+  <p>Did you have a using dream?</p>
+  <md-switch class = 'md-primary' ng-model="reflectionObject.dream">
+    Switch 1: {{ reflectionObject.dream }}
+  </md-switch>
+
+  <md-input-container class="md-block">
+    <label>If yes, can you describe your dream?</label>
+    <textarea ng-model="reflectionObject.tomorrowGoal" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+
+  <!-- {{ reflectionObject }} -->
+  <br>
+  <md-button class = 'md-raised' ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->

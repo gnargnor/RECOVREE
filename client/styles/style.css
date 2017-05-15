@@ -56,7 +56,38 @@
   display: inline-flex;
 }
 
+
+/*keith*/
 .login-container{
   padding: 20px;
   text-align: center;
+}
+
+.wrapper{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grey{
+  background-color: gainsboro;
+}
+
+.selectedTrue{
+  background-color: lightyellow;
+}
+
+button.feeling-button{
+  background-color: gainsboro;
+  border-radius: 5px;
+  display: inline-flex;
+
+  /*font-size: 75px;*/
+  /*min-width: 550px;*/
+}
+
+.md-button{
+  font-size: 10px;
+  min-width: 75px;
 }
