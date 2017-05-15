@@ -44,18 +44,36 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
 
   // REGISTRATION FORM
 
-    // Generate State Dropdown Options
-    $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-      'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-      'WY').split(' ').map(function(state) {
-        return {abbrev: state};
-     });
+      // Generate State Dropdown Options
+      $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+        'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
+        'WY').split(' ').map(function(state) {
+          return {abbrev: state};
+       });
 
-    // Generate Gender Dropdown Options
-    var comma = ',';
-    $scope.genders = ('Female,Male,Trans,Other,Prefer Not to Answer').split(comma).map(function(gender) {
-        return {gender: gender};
-     });
+      // Generate Gender Dropdown Options
+      var comma = ',';
+      $scope.genders = ('Female,Male,Trans,Other,Prefer Not to Answer').split(comma).map(function(gender) {
+          return {gender: gender};
+       });
+
+     // Generate Birth Year Dropdown Options
+     var comma = ',';
+     $scope.years = ('Female,Male,Trans,Other,Prefer Not to Answer').split(comma).map(function(year) {
+         return {gender: gender};
+      });
+
+     // Generate Drugs of Choice Dropdown Options
+     var comma = ',';
+     $scope.drugs = ('Alcohol,Amphetamine,Benzodiazepines,Cocaine,Crack,Ecstasy,Heroin,Inhalants,Marijuana-Hashish,Methamphetamine,Opiates,PCP,Synthetics,Other').split(comma).map(function(drug) {
+         return {drug: drug};
+      });
+
+      // Generate Program Payment Options
+      var comma = ',';
+      $scope.payments = ('Personal Financing,Insurance,Public Assistance,Treatment Program Scholarships').split(comma).map(function(payment) {
+          return {payment: payment};
+       });
 
     // Capture Into MemberSchema
 
