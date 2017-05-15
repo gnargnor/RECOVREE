@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var nodemailer = require('nodemailer');
 var Users = require('../models/user');
 var path = require('path');
 var gv = require('../variables/variables');
@@ -11,6 +12,14 @@ var mongoose = require("mongoose");
 // Handles request for HTML file
 router.get('/', function(req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
+});
+
+var transporter = nodemailer.createTransport({
+  service: 'hotmail',
+  auth: {
+    user: 'benbizzey@outlook.com',
+    pass: '9670no5^BXN^0'
+  },
 });
 
 var randomIdGenerator = function(){
@@ -46,6 +55,24 @@ router.post('/', function(req, res, next) {
       next(err);
     } else {
       // route a new express request for GET '/'
+      console.log('post: ', post);
+      var newUserEmail = {
+        from: '"Ben Bizzey" <benbizzey@outlook.com>',
+        to: 'benbizzey@outlook.com',
+        subject: 'New Recovree Registration',
+        text: '',
+        html: '<b>New Participant added:</b><br>' +
+              '<p>Member ID: ' + userToSave.memberID +'</p>' +
+              '<p>Phone Number: ' + userToSave.username +'</p>' +
+              '<br><br>This is an automatically generated email message.'
+      };
+      transporter.sendMail(newUserEmail, function(err, info){
+        if (err){
+          console.log('nodemailer error: ', err);
+          return;
+        }
+        console.log('New User email sent: %s', info.messageId, info.response);
+      });
       res.redirect('/');
     }
   });
