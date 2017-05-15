@@ -13,6 +13,7 @@ router.get('/', function(req, res) {
     var userInfo = {
       username : req.user.username,
       password : req.user.password,
+      id: req.user._id
     };
     res.send(userInfo);
   } else {
