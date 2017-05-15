@@ -36,10 +36,12 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     // assigns key value pairs
     reflectionObject.feelings = feelingsArray;
+    reflectionObject.feelingsWhy = '';
     reflectionObject.drugAlcoholIntake = false;
     reflectionObject.medication = false;
     reflectionObject.sleep = 0;
     reflectionObject.dream = false;
+    reflectionObject.whatDream = '';
     reflectionObject.exercise = 0;
     reflectionObject.food = 0;
     reflectionObject.spnsrMntrConnect = false;
