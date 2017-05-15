@@ -11,16 +11,9 @@ gv.testFunc('Hello World');
 var UserSchema = new Schema({
     username: {type: String, required: true, index: {unique: true}},
     password: {type: String, required: true},
-    userType: {type: Number}, //1: admin, 2: member - Will be defined in the log-in screen - client side
+    userType: {type: Number, default: 2},          //1: admin, 2: member - will defualt to 2, unless on admin log-in, then set to 1
     memberID : {type: Number, index: {unique:true}},
-    medication : {type: Boolean}
 });
-
-//generate Random ID number for each new member
-var RandomNumID = Math.round(Math.random() * (9999 - 1000) + 1000);
-console.log(RandomNumID);
-//verify that memeber ID is unique number before assigning it
-//
 
 
 // Called before adding a new user to the DB. Encrypts password.
@@ -30,12 +23,10 @@ UserSchema.pre('save', function(next) {
     if(!user.isModified('password')) {
       return next();
     }
-
     bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
         if(err) {
           return next(err);
         }
-
         bcrypt.hash(user.password, salt, function(err, hash) {
             if(err) {
               return next(err);
@@ -54,7 +45,6 @@ UserSchema.methods.comparePassword = function(candidatePassword, callback) {
         if(err) {
           return callback(err);
         }
-
         callback(null, isMatch);
     });
 };

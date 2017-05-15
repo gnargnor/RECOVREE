@@ -34,10 +34,13 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         },
         function(response) {
           console.log('error');
-          $scope.message = "Please try again."
+          $scope.message = "Please try again.";
         });
       }
-    }
+
+
+
+    };
 
   // REGISTRATION FORM
 
@@ -75,4 +78,5 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
     // Capture Into MemberSchema
 
     // Capture Into RegistrationSchema
+
 }]);
