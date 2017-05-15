@@ -15,7 +15,8 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     var feelingsArray = buildArray(listOfFeelings);
 
     //creates stressors array
-    var listOfStressors = ['children','money'];
+    var listOfStressors = ['children','employment','family','finances','friends',
+      'housing','legal issues','no me time','partner','physical pain','school','transportation'];
     var stressorsArray = buildArray(listOfStressors);
 
     //builds an array of objects based on a list of values

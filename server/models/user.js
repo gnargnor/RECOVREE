@@ -13,6 +13,11 @@ var UserSchema = new Schema({
     password: {type: String, required: true},
     userType: {type: Number, default: 2},          //1: admin, 2: member - will defualt to 2, unless on admin log-in, then set to 1
     memberID : {type: Number, index: {unique:true}},
+
+    // userType: {type: Number}, //1: admin, 2: member - Will be defined in the log-in screen - client side
+    // memberID : {type: Number, index: {unique:true}},
+    // medication : {type: Boolean}
+
 });
 
 
