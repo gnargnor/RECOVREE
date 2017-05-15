@@ -46,11 +46,11 @@ myApp.config(['$routeProvider', '$locationProvider',
       }
     })
 
-//check in form
-      //check in 1
-      .when('/check-in-form/check-in-1', {
-        templateUrl: '/views/templates/checkInForm/checkIn1.html',
-        controller: 'CheckInFormController',
+//reflection form
+      //feelings
+      .when('/reflection-form/reflect-1', {
+        templateUrl: '/views/templates/reflectionForm/reflect1.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -59,9 +59,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 2
-      .when('/check-in-form/check-in-2', {
-        templateUrl: '/views/templates/checkInForm/checkIn2.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-2', {
+        templateUrl: '/views/templates/reflectionForm/reflect2.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -70,9 +70,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 3
-      .when('/check-in-form/check-in-3', {
-        templateUrl: '/views/templates/checkInForm/checkIn3.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-3', {
+        templateUrl: '/views/templates/reflectionForm/reflect3.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -81,9 +81,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 4
-      .when('/check-in-form/check-in-4', {
-        templateUrl: '/views/templates/checkInForm/checkIn4.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-4', {
+        templateUrl: '/views/templates/reflectionForm/reflect4.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -92,9 +92,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 5
-      .when('/check-in-form/check-in-5', {
-        templateUrl: '/views/templates/checkInForm/checkIn5.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-5', {
+        templateUrl: '/views/templates/reflectionForm/reflect5.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -103,9 +103,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 6
-      .when('/check-in-form/check-in-6', {
-        templateUrl: '/views/templates/checkInForm/checkIn6.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-6', {
+        templateUrl: '/views/templates/reflectionForm/reflect6.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -114,9 +114,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 7
-      .when('/check-in-form/check-in-7', {
-        templateUrl: '/views/templates/checkInForm/checkIn7.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-7', {
+        templateUrl: '/views/templates/reflectionForm/reflect7.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -125,9 +125,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 8
-      .when('/check-in-form/check-in-8', {
-        templateUrl: '/views/templates/checkInForm/checkIn8.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-8', {
+        templateUrl: '/views/templates/reflectionForm/reflect8.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -136,9 +136,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 9
-      .when('/check-in-form/check-in-9', {
-        templateUrl: '/views/templates/checkInForm/checkIn9.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-9', {
+        templateUrl: '/views/templates/reflectionForm/reflect9.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -147,9 +147,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 10
-      .when('/check-in-form/check-in-10', {
-        templateUrl: '/views/templates/checkInForm/checkIn10.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-10', {
+        templateUrl: '/views/templates/reflectionForm/reflect10.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -158,9 +158,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 11
-      .when('/check-in-form/check-in-11', {
-        templateUrl: '/views/templates/checkInForm/checkIn11.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-11', {
+        templateUrl: '/views/templates/reflectionForm/reflect11.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();
@@ -169,9 +169,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       })
 
       //check in 12
-      .when('/check-in-form/check-in-12', {
-        templateUrl: '/views/templates/checkInForm/checkIn12.html',
-        controller: 'CheckInFormController',
+      .when('/reflection-form/reflect-12', {
+        templateUrl: '/views/templates/reflectionForm/reflect12.html',
+        controller: 'ReflectionFormController',
         resolve: {
           getuser : ['UserService', function(UserService){
             return UserService.getuser();

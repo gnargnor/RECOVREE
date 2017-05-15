@@ -1,0 +1,22 @@
+<div class = 'wrapper'>
+
+  <p>Did you connect with your sponsor/mentor today</p>
+  <md-switch ng-model="reflectionObject.spnsrMntrConnect">
+    Switch 1: {{ reflectionObject.spnsrMntrConnect }}
+  </md-switch>
+
+  <p>How many group meetings did you attend today?</p>
+  <md-switch ng-model="reflectionObject.groupMeet">
+    Switch 1: {{ reflectionObject.groupMeet }}
+  </md-switch>
+
+  <p>Did you engage in any service or community work today?</p>
+  <md-switch ng-model="reflectionObject.commntyService">
+    Switch 1: {{ reflectionObject.commntyService }}
+  </md-switch>
+
+  {{ reflectionObject }}
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->

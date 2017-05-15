@@ -1,0 +1,17 @@
+<div class = 'wrapper'>
+
+  <p>Have you been selfish or dishonest with yourself or others today?</p>
+  <md-switch ng-model="reflectionObject.selfishDishonest">
+    Switch 1: {{ reflectionObject.selfishDishonest }}
+  </md-switch>
+
+  <md-input-container class="md-block">
+    <label>If yes, how?</label>
+    <textarea ng-model="reflectionObject.howSelfshDishnt" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+  {{reflectionObject.howSelfshDishnt}}
+  {{ reflectionObject }}
+  <br>
+  <md-button ng-click = 'reflectionFormNextButton(reflectionObject)'>Next</md-button>
+</div>
+<!-- ends wrapper -->

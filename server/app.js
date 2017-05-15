@@ -12,6 +12,7 @@ var session = require('express-session');
 var index = require('./routes/index');
 var user = require('./routes/user');
 var register = require('./routes/register');
+var reflection = require('./routes/reflection');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -34,6 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.use('/reflection', reflection);
 app.use('/register', register);
 app.use('/user', user);
 app.use('/', index);
